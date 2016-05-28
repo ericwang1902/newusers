@@ -49,9 +49,7 @@ export default {
             'username':this.username,
             'password':this.password
         }
-        
-        var resource = this.$resource('http://localhost:3000/auth')
-         
+        var resource = this.$resource('http://localhost:3000/login')
          resource.save(userinfo).then(function(response){
              console.log('sucess')
              console.log(response.data.token)
@@ -59,8 +57,7 @@ export default {
          },function(response){
              console.log('fail')
              console.log(userinfo)
-         })
-        
+         })     
     }
   }
 }
